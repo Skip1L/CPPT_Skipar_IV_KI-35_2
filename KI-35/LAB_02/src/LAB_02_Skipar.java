@@ -14,8 +14,8 @@ import java.util.*;
 public class LAB_02_Skipar {
     /**
      * Статичний метод main є точкою входу в програму
-     *
-     *
+     * @param args const args
+     * @throws FileNotFoundException check file existing
      */
     public static void main(String[] args) throws FileNotFoundException
     {
@@ -33,29 +33,28 @@ public class LAB_02_Skipar {
         b = nRows%2;
 
         arr = new char[nRows][];
-        for(int i = 0; i < nRows; i++)
-        {
-            arr[i]= new char[nRows];
-        }
 
         System.out.print("\nВведіть символ-заповнювач: ");
         filler = in.nextLine();
 
-
         exit:
         for(int i = 0; i < nRows; i++)
         {
-            for(int j = 0; j < nRows; j++)
+            if (i<nRows/2+b)
+                arr[i] = (i+1)*2<=nRows?new char[(i+1)*2]:new char[(i+1)*2-1];
+            else arr[i] = arr[nRows-i-1];
+
+            for(int j = 0; j < arr[i].length; j++)
             {
                 if(filler.length() == 1)
                 {
-                    if ((j < i+1 || j>nRows-2-i) && i<nRows/2+b)
-                        arr[i][j] = (char) filler.codePointAt(0);
-                    arr[i][j] = (arr[i][j] != '-') ? ' ' : arr[i][j];
-                    arr[nRows - i - 1][j] = arr[i][j];
+                    arr[i][j] = (char) filler.codePointAt(0);
+                    for (int k = 0; k<nRows-arr[i].length && j==arr[i].length/2; k++) {
+                        System.out.print("  ");
+                        fout.print("  ");
+                    }
                     System.out.print(arr[i][j] + " ");
                     fout.print(arr[i][j] + " ");
-
                 }
                 else if (filler.length() == 0)
                 {
