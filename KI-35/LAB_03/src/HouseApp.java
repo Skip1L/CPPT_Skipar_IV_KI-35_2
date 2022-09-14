@@ -1,7 +1,8 @@
 /**
  *  Skipar package
  */
-package KI35.Skipar.Lab3;
+
+import KI35.Skipar.Lab3.House;
 
 import java.io.IOException;
 import static java.lang.System.out;
@@ -15,6 +16,7 @@ import static java.lang.System.out;
 public class HouseApp {
 
     /**
+     * Main function
      * @param args args
      * @throws IOException i/o exception
      */

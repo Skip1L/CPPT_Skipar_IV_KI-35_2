@@ -1,5 +1,10 @@
 package KI35.Skipar.Lab3;
 
+/**
+ * Class <code>Window</code> implement window
+ * @author Ілля
+ * @version 1.0
+ */
 public class Window {
 
     /**

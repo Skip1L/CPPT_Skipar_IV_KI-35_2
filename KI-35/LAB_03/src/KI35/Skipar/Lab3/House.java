@@ -25,6 +25,12 @@ public class House {
     /**
      * Constructor
      * @param citizens count of citizens in the house
+     * @param l brick length
+     * @param w brick width
+     * @param h brick height
+     * @param br_count count of bricks
+     * @param dr_count count of doors
+     * @param wd_count count of windows
      * @throws FileNotFoundException Not found log-file
      */
     public House(int citizens, int l, int w, int h, int br_count, int dr_count, int wd_count) throws FileNotFoundException {

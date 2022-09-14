@@ -1,5 +1,10 @@
 package KI35.Skipar.Lab3;
 
+/**
+ * Class <code>Brick</code> implement brick
+ * @author Ілля
+ * @version 1.0
+ */
 public class Brick {
 
     /**

@@ -1,5 +1,10 @@
 package KI35.Skipar.Lab3;
 
+/**
+ * Class <code>Door</code> implement door
+ * @author Ілля
+ * @version 1.0
+ */
 public class Door {
 
     /**
