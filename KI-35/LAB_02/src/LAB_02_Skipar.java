@@ -40,9 +40,7 @@ public class LAB_02_Skipar {
         exit:
         for(int i = 0; i < nRows; i++)
         {
-            if (i<nRows/2+b)
-                arr[i] = (i+1)*2<=nRows?new char[(i+1)*2]:new char[(i+1)*2-1];
-            else arr[i] = arr[nRows-i-1];
+            arr[i] = i<nRows/2+b?arr[i] = (i+1)*2<=nRows?new char[(i+1)*2]:new char[(i+1)*2-1]:arr[nRows-i-1];
 
             for(int j = 0; j < arr[i].length; j++)
             {

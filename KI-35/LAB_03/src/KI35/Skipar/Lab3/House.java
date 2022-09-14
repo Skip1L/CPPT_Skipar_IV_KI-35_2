@@ -13,78 +13,77 @@ import java.io.PrintWriter;
  */
 public class House {
 
-    private int floors;
-    private String street;
-    private int citizens;
-    private int number;
-    private PrintWriter fout;
-
     /**
-     * Constructor
+     * Default constructor
      * @throws FileNotFoundException Not found log-file
      */
     public House() throws FileNotFoundException {
         fout = new PrintWriter("Log.txt");
-        floors = 0;
-        street = "Unknown";
         citizens = 0;
-        number = 0;
     }
 
     /**
      * Constructor
-     * @param street the street on which the house is located
-     * @param number house number
-     * @param floors count of floors in the house
      * @param citizens count of citizens in the house
      * @throws FileNotFoundException Not found log-file
      */
-    public House(String street, int number, int floors, int citizens) throws FileNotFoundException {
-        this.number = number;
-        this.street = street;
-        this.floors = floors;
+    public House(int citizens, int l, int w, int h, int br_count, int dr_count, int wd_count) throws FileNotFoundException {
         this.citizens = citizens;
+        set_brick(l, w, h, br_count);
+        _door.setCount(dr_count);
+        _window.setCount(wd_count);
         fout = new PrintWriter("Log.txt");
     }
 
     /**
-     * Method returns house's current street name
-     * @return house's current street name
+     * Method set or change bricks in the house
+     * @param c count of bricks
+     * @param h brick height
+     * @param l brick length
+     * @param w brick width
      */
-    public String getStreet() {
-        return street;
+    public void set_brick(int l, int w, int h, int c) {
+        _brick = new Brick(l,w,h,c);
     }
 
     /**
-     * Method set or change house's current street name
-     * @param street the street on which the house is located
+     * Method which return count of brick in the house
+     * @return count of window
      */
-    public void setStreet(String street) {
-        if (this.street.equals("Unknown"))
-            fout.print("House is on " + street + " street\n");
-        else fout.print("Street name changed to " + street + "\n");
-        this.street = street;
-        fout.flush();
+    public int get_brick_count() {
+        return _brick.getCount();
     }
 
     /**
-     * Method return count of floors in the house
-     * @return count of house floors
+     * Method which return count of door
+     * @return count of doors
      */
-    public int getFloors() {
-        return floors;
+    public int get_door() {
+        return _door.getCount();
     }
 
     /**
-     * Method set or change count of floors in the house
-     * @param floors count of floors in the house
+     * Method set or change count of doors in the house
+     * @param count doors count
      */
-    public void setFloors(int floors) {
-        if (this.floors != 0 && this.floors>floors )
-            fout.print( this.floors-floors + (this.floors-floors!=1?" floors were":" floor was") + " destroyed\n");
-        else fout.print( floors-this.floors + (floors-this.floors!=1?" floors were":" floor was") + " built\n");
-        this.floors = floors;
-        fout.flush();
+    public void set_door(int count) {
+        _door = new Door(count);
+    }
+
+    /**
+     * Method which return count of window
+     * @return count of window
+     */
+    public int get_window() {
+        return _window.getCount();
+    }
+
+    /**
+     * Method set or change count of windows in the house
+     * @param count windows count
+     */
+    public void set_window(int count) {
+        _window = new Window(count);
     }
 
     /**
@@ -108,37 +107,16 @@ public class House {
     }
 
     /**
-     * Method return house number
-     * @return house number
-     */
-    public int getNumber() {
-        return number;
-    }
-
-    /**
-     * Method set or change current house number
-     * @param number house number
-     */
-    public void setNumber(int number) {
-        if (this.number == 0)
-            fout.print("House is at " + number + " " + street + " street\n");
-        else fout.print("House number changed to " + number + "\n");
-        this.number = number;
-        fout.flush();
-    }
-
-    /**
-     * Method return average number of citizens on the floor
-     * @return average number of citizens on the floor
-     */
-    public float citizenOnFloor (){
-        return (float) this.citizens/this.floors;
-    }
-    /**
      * Method close log-file
      */
     public void closeFile () {
         fout.close();
     }
+
+    private Brick _brick= new Brick();
+    private Door _door = new Door();
+    private Window _window = new Window();
+    private int citizens;
+    private PrintWriter fout;
 
 }
