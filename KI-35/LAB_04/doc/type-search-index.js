@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"KI_35.Skipar.Lab4","l":"Brick"},{"p":"KI_35.Skipar.Lab4","l":"Door"},{"p":"KI_35.Skipar.Lab4","l":"House"},{"p":"KI_35.Skipar.Lab4","l":"iOffice"},{"p":"KI_35.Skipar.Lab4","l":"OfficeCentre"},{"p":"KI_35.Skipar.Lab4","l":"Window"}];updateSearchResults();
