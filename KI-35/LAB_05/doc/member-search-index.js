@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"KI35.Skipar.Lab5","c":"Equations","l":"calculate(double)"},{"p":"KI35.Skipar.Lab5","c":"Equations","l":"Equations()","u":"%3Cinit%3E()"}];updateSearchResults();
