@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"KI35.Skipar.Lab6","l":"Equations"},{"p":"KI35.Skipar.Lab6","l":"File_IO"}];updateSearchResults();
