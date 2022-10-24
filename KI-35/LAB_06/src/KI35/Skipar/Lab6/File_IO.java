@@ -36,19 +36,18 @@ public class File_IO {
      * @throws FileNotFoundException when can't found file
      */
     public double readResTxt(String fName) throws FileNotFoundException {
-        String num = "";
+        StringBuilder num = new StringBuilder();
         var i = 0;
         try {
             /*FileInputStream in = new FileInputStream(fName);*/
             in = new FileInputStream(fName);
             bin = new BufferedInputStream(in);
             while(( i = bin.read())!=-1) {
-                num += (char) i;
+                num.append((char) i);
             }
             bin.close();
             in.close();
-            assert num != null;
-            return Double.parseDouble(num);
+            return Double.parseDouble(num.toString());
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -66,7 +65,7 @@ public class File_IO {
         out = new FileOutputStream(fName);
         bout = new BufferedOutputStream(out);
         DataOutputStream dot = new DataOutputStream(bout);
-        dot.write(String.valueOf(res).getBytes());
+        dot.writeDouble(res);
         dot.flush();
         dot.close();
         bout.close();
@@ -81,19 +80,13 @@ public class File_IO {
      */
     public double readResBin(String fName) throws IOException
     {
-        String num = "";
+        double num;
         try {
             in = new FileInputStream(fName);
             bin = new BufferedInputStream(in);
             DataInputStream din = new DataInputStream(bin);
-            int count = din.available();
-            byte[] ary = new byte[count];
-            din.read(ary);
-            for (byte bt : ary) {
-                char k = (char) bt;
-                num += k;
-            }
-            return Double.parseDouble(num);
+            num = din.readDouble();
+            return num;
         }
         catch (Exception e)
         {

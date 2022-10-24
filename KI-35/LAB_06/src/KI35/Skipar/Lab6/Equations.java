@@ -17,12 +17,12 @@ public class Equations {
      */
     public double calculate(double deg) throws ArithmeticException
     {
-        double res = 0, rad;
+        double res, rad;
         rad = toRadians(deg);
 
         try {
             res = tan(rad)* tan(rad);
-            if ((int)(deg/90)%2!=0) throw new ArithmeticException();
+            if ((int)(deg/90)%2!=0.0) throw new ArithmeticException();
         }
         catch (ArithmeticException e)
         {
