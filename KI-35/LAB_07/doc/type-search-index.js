@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"KI35.Skipar.Lab7","l":"IStationery"},{"p":"KI35.Skipar.Lab7","l":"Pen"},{"p":"KI35.Skipar.Lab7","l":"PenCase"},{"p":"KI35.Skipar.Lab7","l":"Pencil"}];updateSearchResults();

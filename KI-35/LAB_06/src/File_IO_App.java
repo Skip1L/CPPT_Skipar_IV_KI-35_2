@@ -2,6 +2,7 @@ import KI35.Skipar.Lab6.Equations;
 import KI35.Skipar.Lab6.File_IO;
 
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 import static java.lang.System.out;
