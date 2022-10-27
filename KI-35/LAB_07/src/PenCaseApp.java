@@ -12,7 +12,7 @@ public class PenCaseApp {
         IStationery res = penCase.findMin();
         System.out.print("\nMin: ");
         res.print();
-        System.out.print("\n"+penCase.getCount());
+        System.out.print("\nCount of stationery: "+penCase.getCount());
     }
 
 }
